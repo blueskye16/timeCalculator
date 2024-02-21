@@ -33,29 +33,29 @@ function storeTimeAndCalculate() {
   const hoursToAdd = parseInt(hoursToAddInput.value);
   const minutesToAdd = parseInt(minutesToAddInput.value);
 
-  // Validate start hours: 0-23
-  if (isNaN(startHour) || startHour < 0 || startHour > 23) {
-    alert("Invalid start hour. Please enter a value between 0 and 23.");
-    return;
-  }
+  // // Validate start hours: 0-23
+  // if (isNaN(startHour) || startHour < 0 || startHour > 23) {
+  //   alert("Invalid start hour. Please enter a value between 0 and 23.");
+  //   return;
+  // }
 
-  // Validate start minutes: 0-59
-  if (isNaN(startMinute) || startMinute < 0 || startMinute > 59) {
-    alert("Invalid start minute. Please enter a value between 0 and 59.");
-    return;
-  }
+  // // Validate start minutes: 0-59
+  // if (isNaN(startMinute) || startMinute < 0 || startMinute > 59) {
+  //   alert("Invalid start minute. Please enter a value between 0 and 59.");
+  //   return;
+  // }
 
-  // Validate hours to add: 0-23
-  if (isNaN(hoursToAdd) || hoursToAdd < 0 || hoursToAdd > 23) {
-    alert("Invalid hours to add. Please enter a value between 0 and 23.");
-    return;
-  }
+  // // Validate hours to add: 0-23
+  // if (isNaN(hoursToAdd) || hoursToAdd < 0 || hoursToAdd > 23) {
+  //   alert("Invalid hours to add. Please enter a value between 0 and 23.");
+  //   return;
+  // }
 
-  // Validate minutes to add: 0-59
-  if (isNaN(minutesToAdd) || minutesToAdd < 0 || minutesToAdd > 59) {
-    alert("Invalid minutes to add. Please enter a value between 0 and 59.");
-    return;
-  }
+  // // Validate minutes to add: 0-59
+  // if (isNaN(minutesToAdd) || minutesToAdd < 0 || minutesToAdd > 59) {
+  //   alert("Invalid minutes to add. Please enter a value between 0 and 59.");
+  //   return;
+  // }
 
   // Focus on the next field after reaching the limit
   // if (startHourInput.value.length === 2) {
