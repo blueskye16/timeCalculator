@@ -25,10 +25,6 @@ function calculateHoursMinute(startTime, hoursToAdd, minutesToAdd) {
   return { hours: newHours, minutes: newMinutes };
 }
 
-function calculateMinute(startTime, minuteToAdd){
-
-}
-
 // Function to store input values and calculate new time
 function storeTimeAndCalculate() {
   // Validate input values (optional)
