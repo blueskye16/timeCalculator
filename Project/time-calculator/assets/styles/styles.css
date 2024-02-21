@@ -1,0 +1,166 @@
+:root {
+  --body: #112d4e;
+  --section: #3f72af;
+  --body-title: #77a5dc;
+  --text: #f4f2f2;
+  --box-purple: #392467;
+  --text-nav: #222831;
+  --nav: #d9d9d9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body);
+  /* background-color: gray; */
+}
+
+#headerTop {
+  display: flex;
+  background-color: var(--nav);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul li {
+  display: inline-block;
+  padding-right: 0.8rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+main {
+  padding: 0 2rem;
+}
+
+main header h1 {
+  color: var(--body-title);
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 1.5rem 0;
+}
+
+#timeCalculatorContainer {
+  width: 100%;
+  border-radius: 20px;
+  background-color: var(--section);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+#timeCalculatorContainer h2 {
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  color: var(--body);
+  padding-bottom: 1.8rem;
+  display: inline-block;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#timeDisplay input[type="number"] {
+  max-width: 10%;
+  height: 70%;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* #hourInput[type="number"], #minuteInput[type="number"]{
+  max-width: 20%;
+  margin: 0;
+  padding: 0;
+} */
+
+#hourInput[type="number"],
+#minuteInput[type="number"] {
+  max-width: 80%;
+  height: 70%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 2px;
+}
+
+#timeContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0.5rem;
+}
+
+#timeInputContainer {
+  display: flex;
+  align-content: stretch;
+  justify-content: flex-end;
+  margin-right: 8em;
+}
+
+.time-input-el {
+  width: 6em;
+}
+
+#timeCalculatorContainer button {
+  width: 40vw;
+  cursor: pointer;
+  background-color: var(--body);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  /* margin: .5em auto; */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Translate vertically and horizontally by half its width and height */
+  left: 50%; /* Move left by half its width */
+  top: 50%; /* Move top by half its height */
+  position: relative; /* Make the element absolutely positioned to avoid unexpected relative positioning issues */
+}
+
+#resetBtn{
+  margin-top: .2em;
+}
+
+#calculateBtn {
+  margin-top: 2em;
+}
+
+#resultContainer {
+  background-color: var(--box-purple);
+  color: var(--text);
+  max-width: 40vw;
+  border-radius: 10px;
+  margin: 1.5em auto 0;
+}
+
+#resultContainer h1 {
+  margin: 0.5rem;
+}

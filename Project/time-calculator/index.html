@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Calculator</title>
+
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/09b528e845.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header id="headerTop">
+      <figure>
+        <img
+          src="./assets/images/Logo Universitas AMIKOM Purwokerto.png"
+          alt="logo"
+          width="80vw"
+        />
+      </figure>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Tools</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <header>
+        <h1>
+          Time Calculator: Your Personalized
+          <br />
+          Tool to Count Every Minute
+        </h1>
+      </header>
+      <section id="timeCalculatorContainer">
+        <!-- icon -->
+        <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+        <h2>Time Calculator</h2>
+        <div id="timeContainer">
+          <div id="timeDisplay">
+            <p>Set Time</p>
+            <input
+              type="number"
+              id="startHourInput"
+              placeholder="00"
+              maxlength="2"
+              oninput="this.value = this.value.slice(0, 2)"
+            />
+            <input
+              type="number"
+              id="startMinuteInput"
+              placeholder="00"
+              maxlength="2"
+              oninput="this.value = this.value.slice(0, 2)"
+            />
+          </div>
+          <div id="timeInputContainer">
+            <div id="hourContainer" class="time-input-el">
+              <p>Hour</p>
+              <input
+                type="number"
+                id="hourInput"
+                placeholder="00"
+                maxlength="2"
+                oninput="this.value = this.value.slice(0, 2)"
+              />
+            </div>
+            <div id="minuteContainer" class="time-input-el">
+              <p>Minute</p>
+              <input
+                type="number"
+                id="minuteInput"
+                placeholder="00"
+                maxlength="2"
+                oninput="this.value = this.value.slice(0, 2)"
+              />
+            </div>
+          </div>
+        </div>
+        <button onclick="storeTimeAndCalculate()" id="calculateBtn">
+          CALCULATE
+        </button>
+        <button id="resetBtn">RESET</button>
+        <div id="resultContainer">
+          <p>Result</p>
+          <h1>00:00</h1>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/Javascript/script.js"></script>
+  </body>
+</html>
