@@ -42,7 +42,7 @@
         <h2>Time Calculator</h2>
         <div id="timeContainer">
           <div id="timeDisplay">
-            <p>Set Time</p>
+            <p>SET TIME</p>
             <input
               type="number"
               id="startHourInput"
@@ -79,16 +79,31 @@
             </div>
           </div>
         </div>
-        <button onclick="storeTimeAndCalculate()" id="calculateBtn">
-          CALCULATE
-        </button>
-        <button id="resetBtn">RESET</button>
+        <div class="btn-container">
+          <button
+            class="btn"
+            onclick="storeTimeAndCalculate()"
+            id="calculateBtn"
+          >
+            CALCULATE
+          </button>
+          <button class="btn" id="resetBtn">RESET</button>
+        </div>
         <div id="resultContainer">
-          <p>Result</p>
+          <p>Set Date (optional)</p>
+          <input type="date" id="dateInput"/>
+          <p>RESULT</p>
+          <p id="dateResult">01/03/2024</p>
           <h1>00:00</h1>
         </div>
       </section>
     </main>
+    <footer>Vin &copy 2024</footer>
     <script src="./assets/Javascript/script.js"></script>
   </body>
 </html>
+
+<!-- 
+  Refrences
+  https://sleepcalculator.com/
+-->

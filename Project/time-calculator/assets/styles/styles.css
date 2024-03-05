@@ -5,7 +5,23 @@
   --text: #f4f2f2;
   --box-purple: #392467;
   --text-nav: #222831;
-  --nav: #d9d9d9;
+  /* --nav: #d9d9d9; */
+  --nav: #5084c2;
+  /* --nav: #142436; */
+}
+
+/* input,
+button {
+  min-height: 48px;
+} */
+
+#timeContainer input,
+.btn-container button {
+  min-height: 48px;
+}
+
+input:focus {
+  outline: none;
 }
 
 * {
@@ -25,6 +41,8 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: sticky;
+  top: 0;
 }
 
 nav ul li {
@@ -42,13 +60,13 @@ nav ul li a {
 }
 
 main {
-  padding: 0 2rem;
+  padding: 0 8em;
 }
 
 main header h1 {
   color: var(--body-title);
   font-family: Inter;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -56,7 +74,6 @@ main header h1 {
 }
 
 #timeCalculatorContainer {
-  width: 100%;
   border-radius: 20px;
   background-color: var(--section);
   padding: 1.5rem;
@@ -65,13 +82,26 @@ main header h1 {
 
 #timeCalculatorContainer h2 {
   font-family: Inter;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  color: var(--body);
-  padding-bottom: 1.8rem;
+  color: var(--text);
+  padding-bottom: 1.2em;
   display: inline-block;
+}
+
+#timeDisplay p {
+  letter-spacing: 4px;
+}
+
+#timeDisplay,
+#timeInputContainer p {
+  line-height: auto;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: var(--text);
+  margin-bottom: 6px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -81,86 +111,156 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-#timeDisplay input[type="number"] {
-  max-width: 10%;
-  height: 70%;
+#timeContainer input {
+  max-width: 4em;
+  /* min-height: 48px; */
   text-align: center;
-  font-size: 1.5rem;
-  border: 1px solid #ccc;
+  font-size: 2rem;
+  border: none;
   border-radius: 4px;
+  margin-left: 20px; /* kalo diilangin bakal ada space di startTime */
+  margin: 4px;
+  background-color: var(--box-purple);
+  color: var(--text);
 }
 
-/* #hourInput[type="number"], #minuteInput[type="number"]{
-  max-width: 20%;
-  margin: 0;
-  padding: 0;
-} */
-
-#hourInput[type="number"],
-#minuteInput[type="number"] {
-  max-width: 80%;
-  height: 70%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 2px;
-}
-
-#timeContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 0.5rem;
+#timeContainer input:focus {
+  outline: 3px solid var(--body);
 }
 
 #timeInputContainer {
   display: flex;
-  align-content: stretch;
-  justify-content: flex-end;
-  margin-right: 8em;
+  justify-content: center;
+  margin-top: 1em;
 }
 
-.time-input-el {
-  width: 6em;
-}
-
-#timeCalculatorContainer button {
-  width: 40vw;
+/* #timeCalculatorContainer button {
+  width: 26vw;
   cursor: pointer;
   background-color: var(--body);
   border: none;
   padding: 0.5rem;
   border-radius: 10px;
   color: var(--text);
-  font-size: 1rem;
+  font-size: .8rem;
   font-weight: bold;
-  display: block;
-  /* margin: .5em auto; */
+  display: inline-block;
   transform: translate(
     -50%,
     -50%
-  ); /* Translate vertically and horizontally by half its width and height */
-  left: 50%; /* Move left by half its width */
-  top: 50%; /* Move top by half its height */
-  position: relative; /* Make the element absolutely positioned to avoid unexpected relative positioning issues */
+  ); 
+  left: 50%; 
+  top: 50%; 
+  position: relative; 
+} */
+
+.btn-container {
+  display: flex;
+  max-width: 45vw;
+  margin: 2em auto 0.5em;
 }
 
-#resetBtn{
-  margin-top: .2em;
+.btn {
+  /* height: 3em; */
+  min-height: 48px;
+  background-color: var(--body);
+  border: none;
+  color: var(--text);
+  margin-left: 0.5em;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.5em 0;
+  font-size: 1.5rem;
+  letter-spacing: 6px;
+}
+
+@media only screen and (max-width: 770px) {
+  .btn {
+    font-size: 1rem;
+  }
 }
 
 #calculateBtn {
-  margin-top: 2em;
+  flex-grow: 4;
+  margin-left: -0.5px; /* kalo diilangin jadi gasejajar sama container di bawahnya*/
+  transition: 0.2s;
+}
+
+#calculateBtn:hover {
+  background-color: #05244b;
+}
+
+#resetBtn {
+  flex-grow: 2;
+  background-color: #160d2f;
+  transition: 0.2s;
+}
+
+#resetBtn:hover {
+  background-color: #24164b;
+  /* border: 1px solid var(--box-purple); */
 }
 
 #resultContainer {
   background-color: var(--box-purple);
   color: var(--text);
-  max-width: 40vw;
+  max-width: 45vw;
+  min-height: 8em;
   border-radius: 10px;
-  margin: 1.5em auto 0;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+#resultContainer > p:first-child,
+#resultContainer input {
+  text-align: left;
+  font-size: 1rem;
+}
+
+#resultContainer input {
+  display: block;
+  border: none;
+  background-color: var(--box-purple);
+  color: var(--text);
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(80%);
+  cursor: pointer;
+  /* filter: brightness(100%); */
+}
+
+/*
+  <p> RESULT
+*/
+
+#resultContainer > p:nth-child(3) {
+  /* naha yang ke tiga? padahal cuma ada dua elemen <p> dalem container*/
+  letter-spacing: 6px;
+  padding-top: 0.5em;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 1em;
+}
+
+#resultContainer > p:nth-child(4) {
+  color: rgb(146, 139, 139);
+  font-size: 0.8rem;
+  margin-top: 1em;
 }
 
 #resultContainer h1 {
-  margin: 0.5rem;
+  font-size: 2rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--body);
+  margin-top: 2em;
+  height: 1.6em;
+  color: rgb(173, 169, 169);
 }

@@ -1,15 +1,25 @@
-// masih belum bisa convert dari menit ke jam
-// ex: 70 menit, jamnya ngga nambah
 const startHourInput = document.getElementById("startHourInput");
 const startMinuteInput = document.getElementById("startMinuteInput");
 const hourInput = document.getElementById("hourInput");
 const minuteInput = document.getElementById("minuteInput");
 const resultContainer = document.getElementById("resultContainer");
 const resultText = resultContainer.querySelector("h1");
+const dateResult = document.getElementById("dateResult");
 
 function setTime(startTime) {
-  startTime = startTime.padStart(4, "0");
-  return new Date(`2024-02-01T${startTime}`);
+  startTime = startTime.padStart(5, "0");
+  const dateInput = document.getElementById("dateInput").value;
+
+  // Return a new Date object with the correct format
+  let dateToUse = dateInput ? new Date(dateInput) : new Date("01/01/2024");
+  return new Date(
+    `${dateToUse.getFullYear()}-${(dateToUse.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${dateToUse
+      .getDate()
+      .toString()
+      .padStart(2, "0")}T${startTime}`
+  );
 }
 
 function calculateHoursMinutes(startDate, hoursToAdd, minutesToAdd) {
@@ -22,6 +32,11 @@ function calculateHoursMinutes(startDate, hoursToAdd, minutesToAdd) {
   // Update hours and minutes with the calculations
   startDate.setHours(startDate.getHours() + hoursToAdd + additionalHours);
   startDate.setMinutes(totalMinutes % 60);
+
+  // Handle cases where startDate exceeds the current year
+  if (startDate.getFullYear() > new Date().getFullYear()) {
+    startDate.setFullYear(new Date().getFullYear());
+  }
 
   return {
     newHours: startDate.getHours(),
@@ -40,6 +55,8 @@ function storeTimeAndCalculate() {
     .toString()
     .padStart(2, "0")}`;
   let startDate = setTime(startTime);
+  console.log(startDate);
+  console.log(startTime);
 
   const combinedResult = calculateHoursMinutes(
     startDate,
@@ -53,12 +70,14 @@ function storeTimeAndCalculate() {
     .padStart(2, "0")}:${combinedResult.newMinutes
     .toString()
     .padStart(2, "0")}`;
+  // dateResult.textContent = `${dateToUse}`
 }
 
 // Add event listeners
 document
   .getElementById("calculateBtn")
   .addEventListener("click", storeTimeAndCalculate);
+
 document.getElementById("resetBtn").addEventListener("click", function () {
   startHourInput.value = "";
   startMinuteInput.value = "";
