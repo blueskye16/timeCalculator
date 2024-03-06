@@ -245,10 +245,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 1em;
 }
 
-#resultContainer > p:nth-child(4) {
+#dateResult {
   color: rgb(146, 139, 139);
-  font-size: 0.8rem;
-  margin-top: 1em;
+  font-size: 1rem;
+  margin-top: .4em;
+}
+
+#exceedDay {
+  color: red;
+  /* margin-top: .5rem; */
+  font-size: .8rem;
 }
 
 #resultContainer h1 {
