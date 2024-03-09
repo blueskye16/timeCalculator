@@ -12,23 +12,7 @@
     ></script>
   </head>
   <body>
-    <header id="headerTop">
-      <figure>
-        <img
-          id="imgLogo"
-          src="./assets/images/Logo Universitas AMIKOM Purwokerto.png"
-          alt="logo"
-          width="90vw"
-        />
-      </figure>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Tools</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
-    </header>
+    <page-header></page-header>
     <main>
       <header>
         <h1>
@@ -37,8 +21,8 @@
           Tool to Count Every Minute
         </h1>
       </header>
+      <!-- <main-section></main-section> -->
       <section id="timeCalculatorContainer">
-        <!-- icon -->
         <i class="fa-regular fa-star" style="color: #ffd43b"></i>
         <h2>Time Calculator</h2>
         <div id="timeContainer">
@@ -94,7 +78,7 @@
           <p>Set Date (optional)</p>
           <input type="date" id="dateInput" />
           <p>RESULT</p>
-          <h1>00:00</h1>
+          <h1 id="timeCalculationResult">00:00</h1>
           <p id="dateResult" style="display: none">dd/mm/yyyy</p>
           <p id="exceedDay" style="display: none">Exceeding day time</p>
         </div>
@@ -102,6 +86,7 @@
     </main>
     <footer>Vin &copy 2024</footer>
     <script src="./assets/Javascript/script.js"></script>
+    <script src="./assets/Javascript/customEl.js"></script>
   </body>
 </html>
 
